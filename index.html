@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreya & Mitesh Wedding Invitation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <audio id="bg-music" src="wedding-song.mp3" loop></audio>
+
+    <div id="envelope-overlay">
+        <div class="envelope-container">
+            <p class="announcement-text">AN INVITATION AWAITS</p>
+            <div class="envelope-card">
+                <img src="envelope.jpg" alt="Wedding Envelope" class="main-envelope-img">
+            </div>
+        </div>
+    </div>
+
+    <main id="main-invite">
+        <header class="navbar">
+            <span>HOME</span>
+            <span>SAVE THE DATE</span>
+            <span>OUR STORY</span>
+            <span>COUNTDOWN</span>
+            <span>EVENTS</span>
+        </header>
+
+        <section class="page welcome-page">
+            <div class="diya diya-bottom-left">🪔</div>
+            <div class="diya diya-bottom-right">🪔</div>
+
+            <div class="content-wrapper">
+                <p class="together-text">✦ TOGETHER WITH THEIR FAMILIES ✦</p>
+                
+                <div class="name-block">
+                    <h1 class="couple-name">Shreya</h1>
+                    <p class="parent-info">( D/o Mrs. Bhavana & Hitesh Barot )</p>
+                    
+                    <div class="with-separator">
+                        <span class="line"></span>
+                        <span class="with-text">with</span>
+                        <span class="line"></span>
+                    </div>
+                    
+                    <h1 class="couple-name">Mitesh</h1>
+                    <p class="parent-info">( S/o Mrs. Suman & Mr. Pradeep Shetti )</p>
+                </div>
+
+                <p class="quote">"Two souls, one heart, woven by destiny — request the joy of your presence as we begin our forever."</p>
+                
+                <div class="badge-container">
+                    <div class="pill-badge">
+                        <span class="icon">📅</span> Feb 2027
+                    </div>
+                    <div class="pill-badge">
+                        <span class="icon">📍</span> SAPUTARA, INDIA
+                    </div>
+                </div>
+
+                <div class="scroll-arrow">↓ Scroll to Reveal Details ↓</div>
+            </div>
+        </section>
+
+        <section class="page scratch-page">
+            <div class="diya diya-mid-left">🪔</div>
+            <div class="diya diya-mid-right">🪔</div>
+
+            <div class="content-wrapper">
+                <p class="section-title">MARK YOUR CALENDAR</p>
+                <h2 class="main-heading script-heading">Save the Date</h2>
+                <div class="diamond-divider">✦ <span></span> ✦</div>
+                
+                <div class="scratch-card-outer">
+                    <div class="save-the-date-box">
+                        <div class="card-top">
+                            <span class="calendar-icon">📅</span>
+                            <h2>TWO DAYS OF CELEBRATION</h2>
+                        </div>
+                        
+                        <div class="reveal-date-zone">
+                            <p class="wedding-date">10 - 11 Feb 2027</p>
+                        </div>
+                        
+                        <canvas id="scratch-canvas"></canvas>
+                        
+                        <div class="card-bottom">
+                            <p class="location-text">📍 SAPUTARA, GUJARAT</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="scratch-hint">Swipe the gold to unveil the magic ✨</p>
+            </div>
+        </section>
+
+        <section class="page story-page">
+            <div class="content-wrapper">
+                <p class="chapter-tag">CHAPTER ONE</p>
+                <h2 class="story-title script-heading">Our Love Story</h2>
+                <div class="diamond-divider">✦ <span></span> ✦</div>
+                <p class="story-intro">"From a fleeting glance to a lifetime promise — every chapter brought us closer."</p>
+                
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item left">
+                        <div class="timeline-badge">☕</div>
+                        <div class="timeline-card">
+                            <span class="milestone-date">AUG 2019</span>
+                            <h3>First Meeting</h3>
+                            <p>A chance encounter at a Mumbai chai shop turned into hours of conversation.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item right">
+                        <div class="timeline-badge">❤️</div>
+                        <div class="timeline-card">
+                            <span class="milestone-date">JUN 2021</span>
+                            <h3>Falling in Love</h3>
+                            <p>Long monsoon walks, shared playlists, and the realization — this was the one.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item left">
+                        <div class="timeline-badge">💎</div>
+                        <div class="timeline-card">
+                            <span class="milestone-date">DEC 2024</span>
+                            <h3>The Proposal</h3>
+                            <p>Beneath a canopy of fairy lights in Jaipur, with both families watching.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item right">
+                        <div class="timeline-badge">💍</div>
+                        <div class="timeline-card">
+                            <span class="milestone-date">AUG 2025</span>
+                            <h3>The Engagement</h3>
+                            <p>An intimate roka ceremony blessed by elders, and rings exchanged.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item left">
+                        <div class="timeline-badge">👑</div>
+                        <div class="timeline-card">
+                            <span class="milestone-date">FEB 2027</span>
+                            <h3>The Wedding</h3>
+                            <p>Forever begins under the Saputara stars, with you by our side.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page countdown-page">
+            <div class="countdown-frame">
+                <p class="countdown-tag">THE COUNTDOWN BEGINS</p>
+                <h2 class="countdown-title">Counting the Moments</h2>
+                
+                <div class="countdown-divider">
+                    <span class="line-left"></span>
+                    <span class="sparkle">✦</span>
+                    <span class="line-right"></span>
+                </div>
+
+                <div class="countdown-scratch-outer">
+                    <div class="countdown-scratch-inner">
+                        <div class="reveal-countdown-zone">
+                            <div id="countdown-timer">
+                                <div class="time-block">
+                                    <span id="days">00</span>
+                                    <p>Days</p>
+                                </div>
+                                <div class="time-block">
+                                    <span id="hours">00</span>
+                                    <p>Hours</p>
+                                </div>
+                                <div class="time-block">
+                                    <span id="minutes">00</span>
+                                    <p>Minutes</p>
+                                </div>
+                                <div class="time-block">
+                                    <span id="seconds">00</span>
+                                    <p>Seconds</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <canvas id="countdown-canvas"></canvas>
+                    </div>
+                </div>
+
+                <p class="until-text">Until forever begins ✦ 10 February 2027</p>
+
+                <div class="diya-glow diya-glow-left">🪔</div>
+                <div class="diya-glow diya-glow-right">🪔</div>
+            </div>
+        </section>
+
+        <section class="page events-page">
+            <div class="content-wrapper">
+                <h3 class="events-title">Wedding Events</h3>
+                
+                <div class="event-card">
+                    <span class="event-day">DAY 1 — FEB 10, 2027</span>
+                    <h4>Sangeet &amp; Celebration</h4>
+                    <p class="event-time">⏱️ 7:00 PM Onwards</p>
+                    <p class="event-venue">📍 Akar Lords Inn, Saputara</p>
+                </div>
+
+                <div class="event-card">
+                    <span class="event-day">DAY 2 — FEB 11, 2027</span>
+                    <h4>The Wedding Muhurat</h4>
+                    <p class="event-time">⏱️ 11:00 AM Onwards</p>
+                    <p class="event-venue">📍 Grand Ballroom, Akar Lords Inn</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
