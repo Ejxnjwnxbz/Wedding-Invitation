@@ -1,5 +1,5 @@
 // ==========================================
-// 1. AUDIO & ENVELOPE OVERLAY SYSTEM (MPEG OPTIMIZED)
+// 1. AUDIO & ENVELOPE OVERLAY SYSTEM (WITH FIRST PAGE APPEARANCE FIX)
 // ==========================================
 const envelopeOverlay = document.getElementById('envelope-overlay');
 const bgMusic = document.getElementById('bg-music');
@@ -15,6 +15,17 @@ if (envelopeOverlay) {
         
         setTimeout(() => {
             envelopeOverlay.style.display = 'none';
+            
+            // FIX: Force the first page reveal to trigger manually once overlay clears
+            const firstPageReveal = document.querySelector('.welcome-page .scroll-reveal');
+            if (firstPageReveal) {
+                gsap.to(firstPageReveal, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.5,
+                    ease: "power2.out"
+                });
+            }
         }, 1000);
 
         if (bgMusic) {
@@ -100,7 +111,7 @@ if (canvas) {
 }
 
 // ==========================================
-// 3. LIVE CELEBRATION COUNTDOWN ENGINE
+// 3. LIVE CELEBRATION COUNTDOWN ENGINE (WITH CONFETTI TRIGGER)
 // ==========================================
 const targetDate = new Date('February 10, 2027 00:00:00').getTime();
 
@@ -126,7 +137,7 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// Optional Countdown Mask
+// Countdown Scratch Canvas Mask
 const countCanvas = document.getElementById('countdown-canvas');
 if (countCanvas) {
     const cCtx = countCanvas.getContext('2d');
@@ -162,6 +173,14 @@ if (countCanvas) {
         if (cleared / (imgData.data.length / 4) > 0.4) {
             countCanvas.style.opacity = '0';
             setTimeout(() => countCanvas.remove(), 400);
+            
+            // ADDED: Confetti shower specifically for the countdown container
+            confetti({
+                particleCount: 120,
+                spread: 80,
+                origin: { y: 0.7 },
+                colors: ['#701D2E', '#D4AF37', '#FCF6BA', '#ffffff']
+            });
         }
     }
 
@@ -179,11 +198,12 @@ if (countCanvas) {
 // 4. SCROLL REVEAL STIMULUS (GSAP)
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-    // Register the scroll plugin with the core GSAP engine
     gsap.registerPlugin(ScrollTrigger);
     
-    // Select and animate all target page wrappers smoothly
+    // Animate sections normally on scroll, skip the first page since we handle it on wrap click
     gsap.utils.toArray(".scroll-reveal").forEach((element) => {
+        if (element.closest('.welcome-page')) return; 
+
         gsap.to(element, {
             opacity: 1,
             y: 0,
@@ -191,8 +211,8 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power2.out",
             scrollTrigger: {
                 trigger: element,
-                start: "top 82%", // Triggers animation when section enters 82% from top
-                toggleActions: "play none none none" // Plays once, locks layout in place
+                start: "top 85%", 
+                toggleActions: "play none none none"
             }
         });
     });

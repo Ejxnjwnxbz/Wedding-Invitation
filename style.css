@@ -40,7 +40,7 @@ body {
 }
 
 /* ==========================================================================
-   2. INTERACTIVE ENVELOPE GATEWAY (OVERLAY)
+   2. INTERACTIVE ENVELOPE GATEWAY (OVERLAY) - IMAGE BASED
    ========================================================================== */
 #envelope-overlay {
     position: fixed;
@@ -58,36 +58,84 @@ body {
 }
 
 .envelope-container {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
     padding: 20px;
+    text-align: center;
 }
 
-.announcement-text {
-    font-size: 1.2rem;
-    letter-spacing: 0.3rem;
-    color: var(--gold-bright);
-    margin-bottom: 2rem;
-    font-weight: 300;
-}
-
-.envelope-card {
+/* Wrapper container to house the envelope image asset dynamically scaling */
+.envelope-mock {
+    position: relative;
     max-width: 320px;
-    width: 90vw;
-    border-radius: 8px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(187, 161, 92, 0.2);
-    overflow: hidden;
-    transform: scale(1);
+    width: 85vw;
+    margin-bottom: 2.5rem;
     transition: transform 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.envelope-card:hover {
+.envelope-mock:hover {
     transform: scale(1.03);
 }
 
-.main-envelope-img {
+/* Image architecture targeting envelope.png directly */
+.envelope-mock img {
     width: 100%;
     height: auto;
     display: block;
+    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.45));
+}
+
+/* 3D Premium Metallic Gold Wax Seal Element perfectly centered on top */
+.wax-seal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 62px;
+    height: 62px;
+    background: radial-gradient(circle, #E5B842 0%, #C69224 75%, #9E7110 100%);
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4), inset 0 2px 3px rgba(255,255,255,0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.wax-seal span {
+    font-family: var(--font-serif);
+    font-size: 11px;
+    font-weight: 600;
+    color: #4A3205;
+    letter-spacing: 1.5px;
+}
+
+/* Shimmering Linear-Gradient Champagne Typography Styles */
+.gold-text {
+    font-family: var(--font-script);
+    font-size: 3.2rem;
+    background: linear-gradient(135deg, #B8860B 0%, #DAA520 30%, #FDF5E6 50%, #DAA520 70%, #B8860B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+
+.gold-text-sub {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    background: linear-gradient(135deg, #E5C158 0%, #C29B38 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 /* ==========================================================================
@@ -867,4 +915,26 @@ body {
 @media (max-width: 480px) {
     .main-heading-script { font-size: 3.8rem; }
     .couple-signature { font-size: 2.2rem; }
+}
+
+.envelope-welcome-text {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.envelope-title {
+    font-family: 'Great Vibes', cursive;
+    color: #D4AF37; /* Royal Gold */
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.envelope-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    color: #C5A059; /* Muted Gold */
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
 }
