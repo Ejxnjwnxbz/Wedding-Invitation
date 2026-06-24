@@ -12,11 +12,13 @@
 </head>
 <body>
 
+    <!-- AUDIO CORE -->
     <audio id="bg-music" loop preload="auto">
         <source src="wedding-song.mpeg" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
       
+    <!-- INTERACTIVE ENVELOPE GATEWAY -->
     <div id="envelope-overlay">
         <div class="envelope-container">
             <p class="announcement-text">AN INVITATION AWAITS</p>
@@ -26,6 +28,7 @@
         </div>
     </div>
 
+    <!-- MAIN APP CANVAS CONTAINER -->
     <main id="main-invite">
         <header class="navbar">
             <span onclick="scrollToSection('.welcome-page')">HOME</span>
@@ -35,19 +38,21 @@
             <span onclick="scrollToSection('.events-page')">EVENTS</span>
         </header>
 
+        <!-- PAGE 1: WELCOME INTRO -->
         <section class="page welcome-page">
+            <!-- Enhanced Glitter Matrix -->
             <div class="glitter-container">
-                <div class="sparkle-dot p1"></div>
-                <div class="sparkle-dot p2"></div>
-                <div class="sparkle-dot p3"></div>
-                <div class="sparkle-dot p4"></div>
-                <div class="sparkle-dot p5"></div>
+                <div class="sparkle-dot p1"></div><div class="sparkle-dot p2"></div>
+                <div class="sparkle-dot p3"></div><div class="sparkle-dot p4"></div>
+                <div class="sparkle-dot p5"></div><div class="sparkle-dot p6"></div>
+                <div class="sparkle-dot p7"></div><div class="sparkle-dot p8"></div>
+                <div class="sparkle-dot p9"></div><div class="sparkle-dot p10"></div>
             </div>
 
             <div class="diya-glow diya-top-left">🪔</div>
             <div class="diya-glow diya-top-right">🪔</div>
 
-            <div class="content-wrapper">
+            <div class="content-wrapper scroll-reveal">
                 <p class="together-text">✦ TOGETHER WITH THEIR FAMILIES ✦</p>
                 
                 <div class="name-block">
@@ -67,12 +72,8 @@
                 <p class="quote">"Two souls, one heart, woven by destiny — request the joy of your presence as we begin our forever."</p>
                 
                 <div class="badge-container">
-                    <div class="pill-badge">
-                        <span class="icon">📅</span> FEB 2027
-                    </div>
-                    <div class="pill-badge">
-                        <span class="icon">📍</span> SAPUTARA , INDIA
-                    </div>
+                    <div class="pill-badge">📅 FEB 2027</div>
+                    <div class="pill-badge">📍 SAPUTARA , INDIA</div>
                 </div>
 
                 <div class="scroll-arrow">↓ Scroll to Reveal Details ↓</div>
@@ -82,11 +83,20 @@
             <div class="diya-glow diya-bottom-right">🪔</div>
         </section>
 
+        <!-- PAGE 2: SAVE THE DATE SCRATCH REVEAL -->
         <section class="page scratch-page">
+            <div class="glitter-container">
+                <div class="sparkle-dot p1 gold"></div><div class="sparkle-dot p2 gold"></div>
+                <div class="sparkle-dot p3 gold"></div><div class="sparkle-dot p4 gold"></div>
+                <div class="sparkle-dot p5 gold"></div><div class="sparkle-dot p6 gold"></div>
+                <div class="sparkle-dot p7 gold"></div><div class="sparkle-dot p8 gold"></div>
+                <div class="sparkle-dot p9 gold"></div><div class="sparkle-dot p10 gold"></div>
+            </div>
+
             <div class="diya-glow diya-top-left">🪔</div>
             <div class="diya-glow diya-top-right">🪔</div>
 
-            <div class="content-wrapper">
+            <div class="content-wrapper scroll-reveal">
                 <p class="section-title">MARK YOUR CALENDAR</p>
                 <h2 class="main-heading script-heading">Save the Date</h2>
                 <div class="diamond-divider">✦ <span></span> ✦</div>
@@ -97,13 +107,10 @@
                             <span class="calendar-icon">📅</span>
                             <h2>TWO DAYS OF CELEBRATION</h2>
                         </div>
-                        
                         <div class="reveal-date-zone">
                             <p class="wedding-date">10 & 11 FEB</p>
                         </div>
-                        
                         <canvas id="scratch-canvas"></canvas>
-                        
                         <div class="card-bottom">
                             <p class="location-text">📍 AAKAR LORDS INN, SAPUTARA </p>
                         </div>
@@ -116,15 +123,15 @@
             <div class="diya-glow diya-bottom-right">🪔</div>
         </section>
 
+        <!-- PAGE 3: LOVE TIMELINE -->
         <section class="page story-page">
             <div class="diya-glow diya-top-left">🪔</div>
             <div class="diya-glow diya-top-right">🪔</div>
 
-            <div class="content-wrapper">
+            <div class="content-wrapper scroll-reveal">
                 <p class="chapter-tag">CHAPTER ONE</p>
                 <h2 class="story-title script-heading">Our Love Story</h2>
                 <div class="diamond-divider">✦ <span></span> ✦</div>
-                <p class="story-intro">"From a fleeting glance to a lifetime promise — every chapter brought us closer."</p>
                 
                 <div class="timeline-container">
                     <div class="timeline-line"></div>
@@ -180,54 +187,40 @@
             <div class="diya-glow diya-bottom-right">🪔</div>
         </section>
 
+        <!-- PAGE 4: LIVE TRACKER COUNTDOWN -->
         <section class="page countdown-page">
             <div class="glitter-container">
-                <div class="sparkle-dot p1 gold"></div>
-                <div class="sparkle-dot p2 gold"></div>
-                <div class="sparkle-dot p3 gold"></div>
-                <div class="sparkle-dot p4 gold"></div>
-                <div class="sparkle-dot p5 gold"></div>
+                <div class="sparkle-dot p1 gold"></div><div class="sparkle-dot p2 gold"></div>
+                <div class="sparkle-dot p3 gold"></div><div class="sparkle-dot p4 gold"></div>
+                <div class="sparkle-dot p5 gold"></div><div class="sparkle-dot p6 gold"></div>
+                <div class="sparkle-dot p7 gold"></div><div class="sparkle-dot p8 gold"></div>
+                <div class="sparkle-dot p9 gold"></div><div class="sparkle-dot p10 gold"></div>
             </div>
 
             <div class="diya-glow diya-top-left gold-diya">🪔</div>
             <div class="diya-glow diya-top-right gold-diya">🪔</div>
 
-            <div class="countdown-frame">
+            <div class="countdown-frame scroll-reveal">
                 <p class="countdown-tag">THE COUNTDOWN BEGINS</p>
                 <h2 class="countdown-title">Counting the Moments</h2>
                 
                 <div class="countdown-divider">
-                    <span class="line-left"></span>
-                    <span class="sparkle">✦</span>
-                    <span class="line-right"></span>
+                    <span class="line-left"></span><span class="sparkle">✦</span><span class="line-right"></span>
                 </div>
 
                 <div class="countdown-scratch-outer">
                     <div class="countdown-scratch-inner">
                         <div class="reveal-countdown-zone">
                             <div id="countdown-timer">
-                                <div class="time-block">
-                                    <span id="days">00</span>
-                                    <p>Days</p>
-                                </div>
-                                <div class="time-block">
-                                    <span id="hours">00</span>
-                                    <p>Hours</p>
-                                </div>
-                                <div class="time-block">
-                                    <span id="minutes">00</span>
-                                    <p>Minutes</p>
-                                </div>
-                                <div class="time-block">
-                                    <span id="seconds">00</span>
-                                    <p>Seconds</p>
-                                </div>
+                                <div class="time-block"><span id="days">00</span><p>Days</p></div>
+                                <div class="time-block"><span id="hours">00</span><p>Hours</p></div>
+                                <div class="time-block"><span id="minutes">00</span><p>Minutes</p></div>
+                                <div class="time-block"><span id="seconds">00</span><p>Seconds</p></div>
                             </div>
                         </div>
                         <canvas id="countdown-canvas"></canvas>
                     </div>
                 </div>
-
                 <p class="until-text">Until forever begins ✦ 11 FEB 2027</p>
             </div>
 
@@ -235,97 +228,96 @@
             <div class="diya-glow diya-bottom-right gold-diya">🪔</div>
         </section>
 
+        <!-- PAGE 5: EVENTS ITINERARY GRID -->
         <section class="page events-page">
             <div class="diya-glow diya-top-left">🪔</div>
             <div class="diya-glow diya-top-right">🪔</div>
 
-            <div class="events-container">
+            <div class="events-container scroll-reveal">
                 <p class="events-tag">TWO DAYS OF CELEBRATION</p>
                 <h2 class="events-heading">Wedding Events</h2>
                 
                 <div class="events-divider">
-                    <span class="line-left"></span>
-                    <span class="sparkle">✦</span>
-                    <span class="line-right"></span>
+                    <span class="line-left"></span><span class="sparkle">✦</span><span class="line-right"></span>
                 </div>
                 
                 <div class="events-grid">
                     <div class="event-grid-card">
                         <div class="card-image-box">
-                            <img src="Mehendi.jpeg" alt="Mehendi Ceremony" class="event-bg-img" onerror="this.src='https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=600&auto=format&fit=crop'">
+                            <img src="Mehendi.jpeg" alt="Mehendi" class="event-bg-img" onerror="this.src='https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=600&auto=format&fit=crop'">
                             <span class="ceremony-tag">CEREMONY 1</span>
                         </div>
                         <div class="card-details-box">
-                            <h3 class="event-name-title"><span class="emoji-icon">🌻</span> Mehendi</h3>
+                            <h3 class="event-name-title">🌻 Mehendi</h3>
                             <ul class="details-list">
-                                <li><span class="list-icon">📅</span> Tuesday, 9 Feb 2027</li>
-                                <li><span class="list-icon">⏱️</span> 1:00 PM onwards</li>
-                                <li><span class="list-icon">📍</span> Mayfair virar gardens , Virar(W)</li>
-                                <li><span class="list-icon">👗</span> Green &amp; Lush Green</li>
+                                <li>📅 Tuesday, 9 Feb 2027</li>
+                                <li>⏱️ 1:00 PM onwards</li>
+                                <li>📍 Mayfair virar gardens</li>
+                                <li>👗 Green &amp; Lush Green</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="event-grid-card">
                         <div class="card-image-box">
-                            <img src="Mayra.jpeg" alt="Mayra Ceremony" class="event-bg-img" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600&auto=format&fit=crop'">
+                            <img src="Mayra.jpeg" alt="Mayra" class="event-bg-img" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600&auto=format&fit=crop'">
                             <span class="ceremony-tag">CEREMONY 2</span>
                         </div>
                         <div class="card-details-box">
-                            <h3 class="event-name-title"><span class="emoji-icon">🌿</span> Mayra</h3>
+                            <h3 class="event-name-title">🌿 Mayra</h3>
                             <ul class="details-list">
-                                <li><span class="list-icon">📅</span> Wednesday, 10 Feb 2027</li>
-                                <li><span class="list-icon">⏱️</span> 12:00 PM onwards</li>
-                                <li><span class="list-icon">📍</span> Lawn, Aakar lords inn</li>
-                                <li><span class="list-icon">👗</span> Royal Blue &amp; Ivory</li>
+                                <li>📅 Wednesday, 10 Feb 2027</li>
+                                <li>⏱️ 12:00 PM onwards</li>
+                                <li>📍 Lawn, Aakar lords inn</li>
+                                <li>👗 Royal Blue &amp; Ivory</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="event-grid-card">
                         <div class="card-image-box">
-                            <img src="Haldi.jpeg" alt="Haldi Ceremony" class="event-bg-img" onerror="this.src='https://images.unsplash.com/photo-1595814433015-e6f5ce69614e?q=80&w=600&auto=format&fit=crop'">
+                            <img src="Haldi.jpeg" alt="Haldi" class="event-bg-img" onerror="this.src='https://images.unsplash.com/photo-1595814433015-e6f5ce69614e?q=80&w=600&auto=format&fit=crop'">
                             <span class="ceremony-tag">CEREMONY 3</span>
                         </div>
                         <div class="card-details-box">
-                            <h3 class="event-name-title"><span class="emoji-icon">🪷</span> Haldi</h3>
+                            <h3 class="event-name-title">🪷 Haldi</h3>
                             <ul class="details-list">
-                                <li><span class="list-icon">📅</span> Wednesday, 10 Feb 2027</li>
-                                <li><span class="list-icon">⏱️</span> 4:00 PM onwards</li>
-                                <li><span class="list-icon">📍</span> Lawn, Aakar lords inn</li>
-                                <li><span class="list-icon">👗</span> Yellow &amp; Pastels</li>
+                                <li>📅 Wednesday, 10 Feb 2027</li>
+                                <li>⏱️ 4:00 PM onwards</li>
+                                <li>📍 Lawn, Aakar lords inn</li>
+                                <li>👗 Yellow &amp; Pastels</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="event-grid-card">
                         <div class="card-image-box">
-                            <img src="Sangeet.jpeg" alt="Sangeet Ceremony" class="event-bg-img" onerror="this.src='https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=600&auto=format&fit=crop'">
+                            <img src="Sangeet.jpeg" alt="Sangeet" class="event-bg-img" onerror="this.src='https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=600&auto=format&fit=crop'">
                             <span class="ceremony-tag">CEREMONY 4</span>
                         </div>
                         <div class="card-details-box">
-                            <h3 class="event-name-title"><span class="emoji-icon">💃</span> Sangeet</h3>
+                            <h3 class="event-name-title">💃 Sangeet</h3>
                             <ul class="details-list">
-                                <li><span class="list-icon">📅</span> Wednesday, 10 Feb 2027</li>
-                                <li><span class="list-icon">⏱️</span> 7:00 PM onwards</li>
-                                <li><span class="list-icon">📍</span> Lawn, Aakar lords inn</li>
-                                <li><span class="list-icon">👗</span> Glitz &amp; Glamour</li>
+                                <li>📅 Wednesday, 10 Feb 2027</li>
+                                <li>⏱️ 7:00 PM onwards</li>
+                                <li>📍 Lawn, Aakar lords inn</li>
+                                <li>👗 Glitz &amp; Glamour</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="event-grid-card full-width-card">
                         <div class="card-image-box">
-                            <img src="wedding.jpeg" alt="Wedding Day" class="event-bg-img" onerror="this.src='https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?q=80&w=600&auto=format&fit=crop'">
+                            <img src="wedding.jpeg" alt="Wedding" class="event-bg-img" onerror="this.src='https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?q=80&w=600&auto=format&fit=crop'">
                             <span class="ceremony-tag">CEREMONY 5</span>
                         </div>
                         <div class="card-details-box">
-                            <h3 class="event-name-title"><span class="emoji-icon">👑</span> Wedding</h3>
+                            <h3 class="event-name-title">👑 Wedding</h3>
                             <ul class="details-list">
-                                <li><span class="list-icon">📅</span> Thursday, 11 Feb 2027</li>
-                                <li><span class="list-icon">⏱️</span> 10:00 AM onwards</li>
-                                <li><span class="list-icon">📍</span> Mandap Lawns, Aakar lords inn</li>
-                                <li><span class="list-icon">👗</span> Traditional Indian Attire</li>
+                                <li>📅 Thursday, 11 Feb 2027</li>
+                                <li>⏱️ 10:00 AM onwards</li>
+                                <li>📍 Mandap Lawns, Aakar lords inn</li>
+                                <li>👗 Traditional Indian Attire</li>
                             </ul>
                         </div>
                     </div>
@@ -336,19 +328,15 @@
             <div class="diya-glow diya-bottom-right">🪔</div>
         </section>
 
+        <!-- PAGE 6: GALLERY -->
         <section class="page gallery-page">
             <div class="diya-glow diya-top-left">🪔</div>
             <div class="diya-glow diya-top-right">🪔</div>
 
-            <div class="gallery-container">
+            <div class="gallery-container scroll-reveal">
                 <h4 class="gallery-tag">Memories in Bloom</h4>
                 <h2 class="gallery-heading">Our Gallery</h2>
-                
-                <div class="diamond-divider">
-                    <span></span>✨<span></span>
-                </div>
-                
-                <p class="gallery-subtitle">Cherished moments of laughter, love, and togetherness</p>
+                <div class="diamond-divider"><span></span>✨<span></span></div>
                 
                 <div class="gallery-scroll-wrapper">
                     <div class="gallery-card">
@@ -357,21 +345,18 @@
                             <h3 class="gallery-card-title">Hand in hand</h3>
                         </div>
                     </div>
-                    
                     <div class="gallery-card">
                         <div class="gallery-img-box">
                             <img src="https://picsum.photos/500/700?random=22" alt="A Quiet Moment" class="gallery-img">
                             <h3 class="gallery-card-title">A quiet moment</h3>
                         </div>
                     </div>
-                    
                     <div class="gallery-card">
                         <div class="gallery-img-box">
                             <img src="https://picsum.photos/500/700?random=23" alt="Love in Colour" class="gallery-img">
                             <h3 class="gallery-card-title">Love in colour</h3>
                         </div>
                     </div>
-                    
                     <div class="gallery-card">
                         <div class="gallery-img-box">
                             <img src="https://picsum.photos/500/700?random=24" alt="Together Always" class="gallery-img">
@@ -385,29 +370,27 @@
             <div class="diya-glow diya-bottom-right">🪔</div>
         </section>
 
+        <!-- PAGE 7: THANK YOU SCREEN -->
         <section id="page7" class="page thankyou-page">
             <div class="glitter-container">
-                <div class="sparkle-dot p1 gold"></div>
-                <div class="sparkle-dot p2 gold"></div>
-                <div class="sparkle-dot p3 gold"></div>
-                <div class="sparkle-dot p4 gold"></div>
-                <div class="sparkle-dot p5 gold"></div>
+                <div class="sparkle-dot p1 gold"></div><div class="sparkle-dot p2 gold"></div>
+                <div class="sparkle-dot p3 gold"></div><div class="sparkle-dot p4 gold"></div>
+                <div class="sparkle-dot p5 gold"></div><div class="sparkle-dot p6 gold"></div>
+                <div class="sparkle-dot p7 gold"></div><div class="sparkle-dot p8 gold"></div>
+                <div class="sparkle-dot p9 gold"></div><div class="sparkle-dot p10 gold"></div>
             </div>
 
             <div class="diya-glow diya-top-left gold-diya">🪔</div>
             <div class="diya-glow diya-top-right gold-diya">🪔</div>
 
-            <div class="content-wrapper">
+            <div class="content-wrapper scroll-reveal">
                 <span class="heart-icon-badge">❤️</span>
                 <h5 class="sub-header-tag">FROM THE BOTTOM OF OUR HEARTS</h5>
                 <h1 class="main-heading-script">Thank You</h1>
-                
                 <div class="gold-separator-line"></div>
-                
                 <p class="appreciation-msg">
                     To every soul who has loved us, prayed for us, and journeyed with us — your presence is a blessing we will carry forever.
                 </p>
-                
                 <h3 class="couple-signature">- Shreya & Mitesh</h3>
                 <p class="wedding-footer-stamp">MADE WITH LOVE • 10-11 FEBRUARY 2027</p>
             </div>

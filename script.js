@@ -4,14 +4,12 @@
 const envelopeOverlay = document.getElementById('envelope-overlay');
 const bgMusic = document.getElementById('bg-music');
 
-// Force-preload the audio track rules explicitly on render
 if (bgMusic) {
     bgMusic.load();
 }
 
 if (envelopeOverlay) {
     envelopeOverlay.addEventListener('click', () => {
-        // 1. Smoothly fade out and lift the envelope overlay gateway
         envelopeOverlay.style.opacity = '0';
         envelopeOverlay.style.transform = 'translateY(-100vh)';
         
@@ -19,18 +17,12 @@ if (envelopeOverlay) {
             envelopeOverlay.style.display = 'none';
         }, 1000);
 
-        // 2. Play background audio channel (Fixes browser security autoplay blocks)
         if (bgMusic) {
-            bgMusic.volume = 1.0; // Ensure audio is unmuted and set to full volume
-            
+            bgMusic.volume = 1.0;
             bgMusic.play()
-                .then(() => {
-                    console.log("MPEG Audio playing successfully.");
-                })
+                .then(() => { console.log("MPEG Audio playing successfully."); })
                 .catch(error => {
-                    console.log("Audio play blocked or failed, executing buffer retry:", error);
-                    
-                    // Fallback: Trigger a secondary delayed retry if the asset stream was slow buffering
+                    console.log("Audio play blocked, attempting buffer retry...", error);
                     setTimeout(() => {
                         bgMusic.play().catch(e => console.log("Delayed playback retry failed:", e));
                     }, 150);
@@ -39,7 +31,6 @@ if (envelopeOverlay) {
     });
 }
 
-// Global reusable smooth scroll navigation function
 function scrollToSection(selector) {
     const element = document.querySelector(selector);
     if (element) {
@@ -48,61 +39,47 @@ function scrollToSection(selector) {
 }
 
 // ==========================================
-// 2. INTERACTIVE SAVE-THE-DATE SCRATCH CARD (PAGE 2)
+// 2. INTERACTIVE SAVE-THE-DATE SCRATCH CARD
 // ==========================================
 const canvas = document.getElementById('scratch-canvas');
 if (canvas) {
     const ctx = canvas.getContext('2d');
     let isDrawing = false;
 
-    // Dynamically size canvas to fit its wrapper cleanly
     function initCanvas() {
         canvas.width = canvas.parentElement.offsetWidth;
         canvas.height = canvas.parentElement.offsetHeight;
-        
-        // Fill canvas overlay with premium metallic gold layer
         ctx.fillStyle = '#D4AF37'; 
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        // Add stylized instructions directly over the scratch surface
         ctx.fillStyle = '#ffffff';
         ctx.font = 'italic 14px Cormorant Garamond';
         ctx.textAlign = 'center';
         ctx.fillText('Scratch to Reveal', canvas.width / 2, canvas.height / 2 + 5);
     }
 
-    // Processing scratch strokes (clearing canvas pixels)
     function scratch(e) {
         if (!isDrawing) return;
-        
         const rect = canvas.getBoundingClientRect();
-        // Support both desktop mouse and mobile touch inputs seamlessly
         const x = (e.clientX || e.touches[0].clientX) - rect.left;
         const y = (e.clientY || e.touches[0].clientY) - rect.top;
         
         ctx.globalCompositeOperation = 'destination-out';
         ctx.beginPath();
-        ctx.arc(x, y, 24, 0, Math.PI * 2); // 24px brush radius
+        ctx.arc(x, y, 24, 0, Math.PI * 2);
         ctx.fill();
-        
         checkScratchPercentage();
     }
 
-    // Auto-reveal the content fully once 45% of the mask is removed
     function checkScratchPercentage() {
         const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
         const pixels = imgData.data;
         let cleared = 0;
-        
         for (let i = 3; i < pixels.length; i += 4) {
             if (pixels[i] === 0) cleared++;
         }
-        
         if (cleared / (pixels.length / 4) > 0.45) {
             canvas.style.opacity = '0';
             setTimeout(() => canvas.remove(), 400);
-            
-            // Fire festive celebratory confetti drop
             confetti({
                 particleCount: 100,
                 spread: 70,
@@ -112,22 +89,19 @@ if (canvas) {
         }
     }
 
-    // Event listeners tying mouse and gesture actions together
     canvas.addEventListener('mousedown', () => isDrawing = true);
     canvas.addEventListener('touchstart', () => isDrawing = true);
     window.addEventListener('mouseup', () => isDrawing = false);
     window.addEventListener('touchend', () => isDrawing = false);
     canvas.addEventListener('mousemove', scratch);
     canvas.addEventListener('touchmove', scratch);
-
     window.addEventListener('load', initCanvas);
     window.addEventListener('resize', initCanvas);
 }
 
 // ==========================================
-// 3. LIVE CELEBRATION COUNTDOWN ENGINE (PAGE 4)
+// 3. LIVE CELEBRATION COUNTDOWN ENGINE
 // ==========================================
-// Targeted Wedding Date: February 10, 2027
 const targetDate = new Date('February 10, 2027 00:00:00').getTime();
 
 function updateCountdown() {
@@ -144,7 +118,6 @@ function updateCountdown() {
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    // Format metrics with uniform leading double zeroes
     document.getElementById('days').innerText = days < 10 ? '0' + days : days;
     document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
     document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
@@ -153,7 +126,7 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// Optional Secondary Scratch Mask for Countdown Box
+// Optional Countdown Mask
 const countCanvas = document.getElementById('countdown-canvas');
 if (countCanvas) {
     const cCtx = countCanvas.getContext('2d');
@@ -198,7 +171,29 @@ if (countCanvas) {
     window.addEventListener('touchend', () => countDrawing = false);
     countCanvas.addEventListener('mousemove', countScratch);
     countCanvas.addEventListener('touchmove', countScratch);
-
     window.addEventListener('load', initCountCanvas);
     window.addEventListener('resize', initCountCanvas);
 }
+
+// ==========================================
+// 4. SCROLL REVEAL STIMULUS (GSAP)
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    // Register the scroll plugin with the core GSAP engine
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Select and animate all target page wrappers smoothly
+    gsap.utils.toArray(".scroll-reveal").forEach((element) => {
+        gsap.to(element, {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: element,
+                start: "top 82%", // Triggers animation when section enters 82% from top
+                toggleActions: "play none none none" // Plays once, locks layout in place
+            }
+        });
+    });
+});
